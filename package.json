@@ -1,0 +1,28 @@
+{
+  "name": "reddit-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "start2": "ts-node src/index.ts",
+    "dev2": "nodemon --exec ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yerx/chat-messaging-board-React-GraphQL-Typescript-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yerx/chat-messaging-board-React-GraphQL-Typescript-app/issues"
+  },
+  "homepage": "https://github.com/yerx/chat-messaging-board-React-GraphQL-Typescript-app#readme",
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "typescript": "^3.9.7"
+  }
+}
