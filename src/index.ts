@@ -2,6 +2,7 @@ import { MikroORM } from "@mikro-orm/core";
 import { __prod__ } from "./constants";
 import { Post } from "./entities/Post";
 import microConfig from "./mikro-orm.config";
+import express from "express";
 
 // create async main function
 const main = async () => {
@@ -9,11 +10,15 @@ const main = async () => {
   const orm = await MikroORM.init(microConfig);
   // run migrations
   await orm.getMigrator().up();
-  // run sql
-  // const post = orm.em.create(Post, { title: "my first post" });
-  // await orm.em.persistAndFlush(post);
-  const posts = await orm.em.find(Post, {});
-  console.log(posts);
+
+  const app = express();
+  app.get("/", (_, res) => {
+    res.send("hello");
+  });
+  const port = 4000;
+  app.listen(port, () => {
+    console.log(`server started on localhost:${port}`);
+  });
 };
 
 main().catch((err) => {
